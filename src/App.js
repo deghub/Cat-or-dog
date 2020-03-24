@@ -85,7 +85,7 @@ export default class Root extends React.Component {
     initNavigator();
     StatusBar.setHidden(true);
     
-    fetch("http://mock-api.com/dnooN2nX.mock/webview", {
+    fetch("http://mock-api.com/Zn5aQwnj.mock/geturl", {
       method: 'GET'
     })
     .then(response => {

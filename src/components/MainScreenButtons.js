@@ -18,7 +18,7 @@ const MainScreenButtons = ({
 				justifyContent: "center"
 			}}
 		>
-			{true && (
+			{/* {true && (
 				<View
 					style={{
 						width: 250,
@@ -27,7 +27,7 @@ const MainScreenButtons = ({
 				>
 					<MainMenuButton onPress={newGameClick} title={"levels"} />
 				</View>
-			)}
+			)} */}
 
 			{isCustomGameVisible && (
 				<View

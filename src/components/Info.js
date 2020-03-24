@@ -31,7 +31,7 @@ const Info = ({scrollViewRef}) => {
 						fontSize: 25
 					}}
 				>
-					Cat or Dog?
+          Tap Cat or Dog
 				</Text>
 
 				<Text
@@ -39,21 +39,24 @@ const Info = ({scrollViewRef}) => {
 						fontSize: 12
 					}}
 				>
-					version: 1.0.3
+					version: 1.0.0
 				</Text>
 
 				<View style={{}}>
 					<Text
 						style={{
 							marginTop: 16,
-							fontSize: 20
+							fontSize: 20,
+              marginBottom: 6
 						}}
 					>
 						How To play
 					</Text>
 					<Text>1) Select photo categories</Text>
-					<Text>2) Swipe photos according the categories</Text>
-					<Text>3) Game ends after 5th mistake</Text>
+					<Text>2) Tap and swipe photos according to the categories</Text>
+					<Text>3) If the image goes to wrong category, you will lose your life</Text>
+					<Text>4) If you tap the red circled black dog image, you will lose your life</Text>
+					<Text>5) Game ends after 5th mistake</Text>
 
 					<Text
 						style={{
@@ -61,7 +64,6 @@ const Info = ({scrollViewRef}) => {
 							fontSize: 20
 						}}
 					>
-						Ui elements
 					</Text>
 
 					<View
@@ -100,14 +102,13 @@ const Info = ({scrollViewRef}) => {
 
 				<Text
 					style={{
-						fontSize: 20,
 						marginTop: 16,
 						marginBottom: 8
 					}}
 				>
-					Assets sources
+					You can check your game history and your best core ever
 				</Text>
-				{photoSources.map(image => {
+				{/* {photoSources.map(image => {
 					return (
 						<View key={image.resource}>
 							<Image
@@ -150,7 +151,7 @@ const Info = ({scrollViewRef}) => {
 				>
 					"Cat, Screaming, A.wav" by InspectorJ (www.jshaw.co.uk) of
 					Freesound.org
-				</Text>
+				</Text> */}
 			</View>
 		</ScrollView>
 	);

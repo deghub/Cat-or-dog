@@ -58,17 +58,20 @@ const noGame = () => {
 	return (
 		<View
 			style={{
+        backgroundColor: "#f0f0f0",
 				flex: 1,
-				justifyContent: "center",
-				alignItems: "center"
+				// justifyContent: "center",
+				alignItems: "center",
+        paddingTop: 100
 			}}
 		>
 			<Text
 				size={{
-					fontSize: 17
+					fontSize: 17,
+          marginTop: 100
 				}}
 			>
-				no games
+        You didn't play yet.
 			</Text>
 		</View>
 	);
@@ -77,6 +80,7 @@ const noGame = () => {
 const keyExtractor = ({dateOfStart}) => dateOfStart.toString();
 
 const ResultList = ({results}) => {
+  console.log('\n---     Result List      -----', results, results.length);
 	if (results.length === 0) {
 		return noGame();
 	} else {

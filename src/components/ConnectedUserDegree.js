@@ -45,12 +45,12 @@ const hoc = compose(
 		return {
 			currentUserDegree: userDegrees[degreeIndex],
 			nextUserDegree: userDegrees[1 + degreeIndex],
-			onPress: () => {
-				setTimeout(
-					() => shareProfile(props.bestScore, userDegrees[degreeIndex]),
-					200
-				);
-			},
+			// onPress: () => {
+			// 	setTimeout(
+			// 		() => shareProfile(props.bestScore, userDegrees[degreeIndex]),
+			// 		200
+			// 	);
+			// },
 			...props
 		};
 	})
