@@ -62,7 +62,7 @@ const MainScreen = ({
 						}}
 						newGameClick={newGameClick}
 					/>
-					<MusicController />
+					{/* <MusicController /> */}
 				</View>
 			</AppearOnMount>
 

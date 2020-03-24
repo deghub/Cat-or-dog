@@ -28,10 +28,14 @@ export const photoSources: Array<PhotoSource> = [
 		source: "https://commons.wikimedia.org/wiki/File:Big_Fat_Red_Cat.jpg",
 		tags: ["fat cat", "cat"]
 	},
-
 	{
 		resource: require("../img/fat_cat_4.jpg"),
 		source: "/https://www.flickr.com/photos/elsie/5062307",
+		tags: ["fat cat", "cat"]
+	},
+	{
+		resource: require("../img/fat_cat_5.jpg"),
+		source: "/https://thenypost.files.wordpress.com/2019/09/fat-cat.jpg",
 		tags: ["fat cat", "cat"]
 	},
 	{

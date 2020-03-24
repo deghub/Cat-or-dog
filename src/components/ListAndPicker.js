@@ -39,7 +39,7 @@ const ListAndPicker = ({
 			<StateFullPicker
 				containerStyle={[
 					styles.picker,
-					{backgroundColor: pickerBackgroundColor}
+					{backgroundColor: pickerBackgroundColor, paddingTop: 15, height: 60}
 				]}
 				menuStyle={{backgroundColor: pickerBackgroundColor}}
 				values={availablePropepries}
@@ -74,8 +74,7 @@ const ListAndPicker = ({
 
 const styles = StyleSheet.create({
 	root: {
-    flex: 1,
-    paddingTop: 30
+    flex: 1
 	},
 	picker: {
 		width: "100%",
