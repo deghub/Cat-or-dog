@@ -18,7 +18,7 @@ const MainScreenButtons = ({
 				justifyContent: "center"
 			}}
 		>
-			{isLevelsVisible && (
+			{true && (
 				<View
 					style={{
 						width: 250,
@@ -54,7 +54,7 @@ const MainScreenButtons = ({
 					marginVertical: 8
 				}}
 			>
-				<MainMenuButton onPress={onInfoClick} title={"info"} />
+				<MainMenuButton onPress={onInfoClick} title={"how to play"} />
 			</View>
 		</View>
 	);

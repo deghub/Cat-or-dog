@@ -74,7 +74,8 @@ const ListAndPicker = ({
 
 const styles = StyleSheet.create({
 	root: {
-		flex: 1
+    flex: 1,
+    paddingTop: 30
 	},
 	picker: {
 		width: "100%",

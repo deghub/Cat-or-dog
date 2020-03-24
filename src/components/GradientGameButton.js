@@ -17,15 +17,15 @@ const GradientGameButton = ({title, onPress}: Props) => {
 			<LinearGradient
 				// start={{x: 0.0, y:0 }} end={{x: 1, y:0}}
 				locations={[0.1, 0.9]}
-				colors={["#d66a41", "#f2b448"]}
+				colors={["#3498db", "#3498db"]}
 				style={{
 					overflow: "hidden",
 					borderRadius: 30,
 					// borderColor: 'white',
 					width: "100%",
 					height: 50,
-					borderWidth: 1,
-					borderColor: "#0209ac",
+					// borderWidth: 1,
+          border: 'none',
 					alignItems: "center",
 					justifyContent: "center"
 				}}
@@ -34,7 +34,8 @@ const GradientGameButton = ({title, onPress}: Props) => {
 					style={{
 						fontFamily: "MavenPro-Bold",
 						fontSize: 20,
-						color: "#fffbfa",
+						// color: "#fffbfa",
+            color: 'white',
 						textAlign: "center"
 					}}
 				>
