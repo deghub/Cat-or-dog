@@ -27,7 +27,7 @@ const Component = ({isEnabled, onValueChange}) => {
 			>
 				<Text
 					style={{
-						fontFamily: "MavenPro",
+						fontFamily: "MavenPro-Regular",
 						fontSize: 15,
 						color: "#fffbfa",
 						textAlign: "center"
