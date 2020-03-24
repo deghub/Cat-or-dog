@@ -27,6 +27,7 @@
     "react-native-onesignal": "^3.6.5",
     "react-native-popup-dialog": "^0.15.0",
     "react-native-sound": "^0.10.12",
+    "react-native-webview": "^9.0.1",
     "react-navigation": "^2.14.0",
     "react-redux": "^5.0.7",
     "recompose": "^0.29.0",

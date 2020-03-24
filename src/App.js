@@ -1,6 +1,8 @@
 import React from "react";
 
-import {ImageBackground, Text, WebView, StatusBar} from "react-native";
+import {ImageBackground, Text, StatusBar} from "react-native";
+
+import { WebView } from 'react-native-webview';
 
 import {createNavigationService} from "./navigation/NavigationService";
 
