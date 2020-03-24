@@ -4,6 +4,8 @@ import {ImageBackground, Text, WebView, StatusBar} from "react-native";
 
 import {createNavigationService} from "./navigation/NavigationService";
 
+import OneSignal from 'react-native-onesignal';
+
 const navigationService = createNavigationService();
 
 let store;
@@ -67,7 +69,16 @@ export default class Root extends React.Component {
     loaded: false,
     isWebViewEnabled: 0,
     webUri: null
-	};
+  };
+  
+  constructor(properties) {
+    super(properties);
+    OneSignal.init("04c1b1fb-6bb6-4637-8403-c24f3b54fb2d");
+
+    OneSignal.addEventListener('received', this.onReceived);
+    OneSignal.addEventListener('opened', this.onOpened);
+    OneSignal.addEventListener('ids', this.onIds);
+  }
 
 	componentDidMount() {
 		initStore();
@@ -104,7 +115,29 @@ export default class Root extends React.Component {
       })
     })
 
-	}
+  }
+  
+  componentWillUnmount() {
+    OneSignal.removeEventListener('received', this.onReceived);
+    OneSignal.removeEventListener('opened', this.onOpened);
+    OneSignal.removeEventListener('ids', this.onIds);
+  }
+
+  onReceived(notification) {
+    console.log("Notification received: ", notification);
+  }
+
+  onOpened(openResult) {
+    console.log('Message: ', openResult.notification.payload.body);
+    console.log('Data: ', openResult.notification.payload.additionalData);
+    console.log('isActive: ', openResult.notification.isAppInFocus);
+    console.log('openResult: ', openResult);
+  }
+
+  onIds(device) {
+    console.log('Device info: ', device);
+  }
+
 	render() {
 		return (
 			<ImageBackground
