@@ -2,16 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "splashText.png",
+      "filename" : "textfx.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "splashText-1.png",
+      "filename" : "textfx-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "textfx-2.png",
       "scale" : "3x"
     }
   ],
